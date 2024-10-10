@@ -1,0 +1,82 @@
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Adjust image to fit container without distorting */
+  z-index: -1;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign {
+  font-family: 'Times New Roman', serif; /* Times New Roman font */
+  font-size: 120px; /* Even bigger */
+  background: linear-gradient(45deg, #00ff00, #ff00ff, #ffff00, #00ff00); /* Green, purple, yellow gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #ff00ff, 0 0 30px #ffff00; /* Glowing edges */
+  animation: smoke 10s infinite linear;
+  margin-bottom: 20px;
+}
+
+.ascii-text {
+  font-family: 'Times New Roman', serif; /* Times New Roman font */
+  font-size: 320px; /* 2 times bigger */
+  color: transparent; /* Remove text color */
+  text-shadow: 0 0 20px purple, 0 0 40px purple, 0 0 60px purple, 0 0 80px purple, 0 0 100px purple; /* Sharper glowing edges */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: rotate 5s infinite linear, smoke-zoom 10s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes smoke {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-50px) scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes smoke-zoom {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
